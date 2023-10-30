@@ -1,0 +1,16 @@
+  
+  
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    margin: 0;
+}
+
+main {
+    text-align: center; /* Center the content horizontally within the main element */
+    flex: 1;
+}
+
