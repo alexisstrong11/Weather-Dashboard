@@ -27,27 +27,40 @@ searchButton.addEventListener('click', () => {
 
         // Fetch five-day weather forecast data
         fetch(`${apiEndpoint}/forecast?q=${location}&appid=${apiKey}`)
-            .then(response => response.json())
-            .then(data => {
-                // Display five-day weather forecast data
-                const forecastList = data.list;
-                const fiveDayForecast = forecastList.slice(0, 5); // Get the first five entries for the next five days
+    .then(response => response.json())
+    .then(data => {
+        // Display the complete five-day weather forecast data
+        const forecastList = data.list;
 
-                forecastData.innerHTML = '';
-                fiveDayForecast.forEach(forecast => {
-                    const date = new Date(forecast.dt * 1000); // Convert timestamp to date
-                    const day = date.toLocaleDateString('en-US', { weekday: 'short' });
-                    const temperature = forecast.main.temp;
-                    const description = forecast.weather[0].description;
+        // Create an object to store forecasts for each day of the week
+        const dailyForecasts = {};
 
-                    forecastData.innerHTML += `
-                        <div class="forecast-item">
-                            <p>${day}</p>
-                            <p>${temperature}°C</p>
-                            <p>${description}</p>
-                        </div>
-                    `;
-                });
+        forecastList.forEach(forecast => {
+            const date = new Date(forecast.dt * 1000);
+            const day = date.toLocaleDateString('en-US', { weekday: 'short' });
+
+            if (!dailyForecasts[day]) {
+                dailyForecasts[day] = {
+                    temperature: forecast.main.temp,
+                    description: forecast.weather[0].description,
+                };
+            }
+        });
+
+        forecastData.innerHTML = '';
+
+        // Iterate through the dailyForecasts object and display the data
+        for (const day in dailyForecasts) {
+            const { temperature, description } = dailyForecasts[day];
+            forecastData.innerHTML += `
+                <div class="forecast-item">
+                    <p>${day}</p>
+                    <p>${temperature}°C</p>
+                    <p>${description}</p>
+                </div>
+            `;
+        }
+
             })
             .catch(error => console.error('Error fetching five-day weather forecast:', error));
     }
