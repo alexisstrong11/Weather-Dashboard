@@ -13,11 +13,11 @@ This project allowed me to use my knowledge of HTML, CSS and JavaScript server-s
 - - - -
 ## **Usage**
 To access and use my project, click the "Weather Dashboard" link shown in the [Website Preview](#website-preview)<a name="website_preview"></a> section below. 
-Enter the city name in the "choose location" box to display the five day forecast for that area. 
+Enter any city name in the "choose location" box to display the five day forecast for that area. When you click search, you will see the weather forecast for the current and next four days.  
 - - - -
 ## **Website Preview**
 [Weather Dashboard](https://alexisstrong11.github.io/Work-Scheduler/)
-![Dashboard homepage](./Assets/calendar2.png "homepage")
+![Dashboard homepage](./assests/forecast.png "homepage")
 - - - - 
 ## **Credits**
 NOTE: *I received help from the instructors and tutors to assist with my project.*
