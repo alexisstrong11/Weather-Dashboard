@@ -16,7 +16,7 @@ To access and use my project, click the "Weather Dashboard" link shown in the [W
 Enter any city name in the "choose location" box to display the five day forecast for that area. When you click search, you will see the weather forecast for the current and next four days.  
 - - - -
 ## **Website Preview**
-[Weather Dashboard](https://alexisstrong11.github.io/Work-Scheduler/)
+[Weather Dashboard](https://alexisstrong11.github.io/Weather-Dashboard/)
 ![Dashboard homepage](./assests/forecast.png "homepage")
 - - - - 
 ## **Credits**
